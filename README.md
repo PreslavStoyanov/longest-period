@@ -12,9 +12,9 @@ EmpID, ProjectID, DateFrom, DateTo
 - Getting all Employee pairs who worked together
 
 ### Technical features
-- Written on Java v17 with Spring v3
+- Written on Java with Spring
 - Used Apache CSV common lib for reading csv files
-- Using springdoc with OpenApi v3 for interacting with endpoints
+- Using springdoc for interacting with endpoints
 
 ## Screenshots
 
