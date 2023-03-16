@@ -16,11 +16,11 @@ import java.util.List;
 @Service
 public class FileHandler
 {
-    private final DateFormatter dateFormatter;
+    private final DateParser dateParser;
 
-    public FileHandler(DateFormatter dateFormatter)
+    public FileHandler(DateParser dateParser)
     {
-        this.dateFormatter = dateFormatter;
+        this.dateParser = dateParser;
     }
 
     public List<Note> parseFile(MultipartFile file)
@@ -33,8 +33,8 @@ public class FileHandler
                     .map(csvLine -> new Note(
                             csvLine.get("EmpID"),
                             csvLine.get("ProjectID"),
-                            dateFormatter.formatDate(csvLine.get("DateFrom")),
-                            dateFormatter.formatDate(csvLine.get("DateTo"))
+                            dateParser.parseDate(csvLine.get("DateFrom")),
+                            dateParser.parseDate(csvLine.get("DateTo"))
                     )).toList();
         }
         catch (IOException e)
