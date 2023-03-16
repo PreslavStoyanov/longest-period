@@ -7,14 +7,14 @@ import java.time.LocalDate;
 import static java.time.format.DateTimeFormatter.ofPattern;
 
 @Service
-public class DateFormatter
+public class DateParser
 {
     private static final String NULL = "null";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
-    public LocalDate formatDate(String dateInString)
+    public LocalDate parseDate(String dateInString)
     {
-        if (dateInString.equalsIgnoreCase(NULL))
+        if (dateInString == null || dateInString.equalsIgnoreCase(NULL))
         {
             return LocalDate.now();
         }
